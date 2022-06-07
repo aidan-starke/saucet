@@ -33,16 +33,8 @@
 			>
 			<input
 				type="text"
-				class="ml-6 block h-10 w-[32rem] rounded border border-gray-400 pl-2 font-mono hover:border-[#9847FF]"
+				class="ml-6 block h-10 w-[32rem] rounded border border-gray-400 pl-2 font-mono hover:border-[#9847FF] mt-1"
 			/>
 		</div>
 	</form>
 </div>
-
-<!-- 
-	display: block;
-			text-transform: uppercase;
-			color: ${palette.primary.main};
-			font-weight: bold;
-			margin-bottom: 0.5em;
- -->
