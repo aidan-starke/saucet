@@ -1,6 +1,7 @@
 {
   "name": "saucet",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -11,6 +12,13 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check --plugin-search-dir=. . && eslint .",
     "format": "prettier --write --plugin-search-dir=. ."
+  },
+  "dependencies": {
+    "@cennznet/api": "2.1.1-alpha.4",
+    "@polkadot/keyring": "^8.7.1",
+    "@polkadot/util": "^8.7.1",
+    "ethers": "^5.6.8",
+    "keyring^8.7.1": "link:@polkadot/keyring^8.7.1"
   },
   "devDependencies": {
     "@cennznet/types": "2.1.1-alpha.4",
@@ -33,9 +41,5 @@
     "tailwindcss": "^3.0.24",
     "tslib": "^2.3.1",
     "typescript": "~4.6.2"
-  },
-  "type": "module",
-  "dependencies": {
-    "@cennznet/api": "2.1.1-alpha.4"
   }
 }

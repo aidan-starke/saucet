@@ -3,6 +3,7 @@
 	import Copy from "@/components/copy.svelte";
 	import TokenSelect from "@/components/token-select.svelte";
 	import NetworkSelect from "@/components/network-select.svelte";
+	import AddressInput from "@/components/address-input.svelte";
 </script>
 
 <div
@@ -31,10 +32,7 @@
 				class="text-md mb-1 ml-6 font-semibold uppercase text-[#9847FF]"
 				for="address">Address</label
 			>
-			<input
-				type="text"
-				class="ml-6 block h-10 w-[32rem] rounded border border-gray-400 pl-2 font-mono hover:border-[#9847FF] mt-1"
-			/>
+			<AddressInput />
 		</div>
 	</form>
 </div>
