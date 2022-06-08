@@ -18,9 +18,9 @@
 	bind:value={input}
 />
 {#if !isValidAddress}
-	<div class="ml-1.5 w-48 text-sm" transition:fade>
+	<div class="absolute ml-1.5 w-48 text-sm" transition:fade>
 		<div
-			class="align-content-center m-5 flex rounded-md border border-solid border-yellow-400 p-2 text-center shadow danger-arrow-top"
+			class="align-content-center -top-4 m-5 flex rounded-md border border-solid border-yellow-400 bg-white p-2 text-center shadow danger-arrow-top"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
