@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { CENNZ_LOGO } from "@/assets";
+	import Tooltip from "@/components/tooltip.svelte";
 </script>
 
 <div class="my-6 mr-6 flex items-start">
@@ -21,14 +22,18 @@
 		<p class="mb-3">
 			One claim per day per token is allowed.
 			<br />
-			A
-			<span
-				class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
-				>legitimate Twitter account</span
-			> is required.
+			<Tooltip
+				message="Account must have at least 1 tweet, 15 followers, and be older than 1 month."
+			>
+				A&nbsp;<span
+					class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
+					>legitimate Twitter account</span
+				>&nbsp; is required.</Tooltip
+			>
 		</p>
 		<p>
-			Click <span
+			Click
+			<span
 				class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
 				>here</span
 			>
