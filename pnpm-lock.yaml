@@ -24,6 +24,7 @@ specifiers:
   svelte-check: ^2.2.6
   svelte-preprocess: ^4.10.1
   tailwindcss: ^3.0.24
+  tailwindcss-tooltip-arrow-after: ^1.0.0
   tslib: ^2.3.1
   typescript: ~4.6.2
 
@@ -37,7 +38,7 @@ dependencies:
 devDependencies:
   '@cennznet/types': 2.1.1-alpha.4
   '@sveltejs/adapter-auto': 1.0.0-next.50
-  '@sveltejs/kit': 1.0.0-next.348_svelte@3.48.0
+  '@sveltejs/kit': 1.0.0-next.350_svelte@3.48.0
   '@types/node': 17.0.40
   '@typescript-eslint/eslint-plugin': 5.27.1_bnfefdnvqpcyokeggdz5sotnli
   '@typescript-eslint/parser': 5.27.1_pm7osnb22e4oktq33hptgspr5i
@@ -53,6 +54,7 @@ devDependencies:
   svelte-check: 2.7.2_s3dopqgs4h45owyu2kxaf6kyfu
   svelte-preprocess: 4.10.7_duhgfvbo5codih7syhobgij5ny
   tailwindcss: 3.0.24
+  tailwindcss-tooltip-arrow-after: 1.0.0
   tslib: 2.4.0
   typescript: 4.6.4
 
@@ -1052,8 +1054,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.348_svelte@3.48.0:
-    resolution: {integrity: sha512-K9dfgzIbotWmbcdCsQ6ROGs9R+bsGWwmSdN6l6km1QV5esQehqg1UYHGD9q0VJsg4rJg/zmKVBYo0oBquSHPZw==}
+  /@sveltejs/kit/1.0.0-next.350_svelte@3.48.0:
+    resolution: {integrity: sha512-qkZNjp7yIj6t91+wMhmMtGJH0Lb89OaKdVXUDy92CS5/4OHRTKcQPdfOKs4no/upkS3RiFb+rEpOkYqTMcPUXg==}
     engines: {node: '>=16.7'}
     hasBin: true
     peerDependencies:
@@ -2611,7 +2613,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
@@ -3498,6 +3499,12 @@ packages:
   /svelte/3.48.0:
     resolution: {integrity: sha512-fN2YRm/bGumvjUpu6yI3BpvZnpIm9I6A7HR4oUNYd7ggYyIwSA/BX7DJ+UXXffLp6XNcUijyLvttbPVCYa/3xQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /tailwindcss-tooltip-arrow-after/1.0.0:
+    resolution: {integrity: sha512-iPL63shQtlAeS9iVIT5mEf7x/Tz2RfdfsYdVMvq9ZrjmRTVqvneEjOqEMuUJ/XupdMJakYoFw3DawEaeAY5aBQ==}
+    dependencies:
+      lodash: 4.17.21
     dev: true
 
   /tailwindcss/3.0.24:
