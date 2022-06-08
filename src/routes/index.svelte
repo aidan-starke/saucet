@@ -4,13 +4,14 @@
 	import TokenSelect from "@/components/token-select.svelte";
 	import NetworkSelect from "@/components/network-select.svelte";
 	import AddressInput from "@/components/address-input.svelte";
+	import FaucetButton from "@/components/faucet-button.svelte";
 </script>
 
 <div
 	class="relative m-auto w-2/5 overflow-hidden rounded-lg bg-white p-2 shadow-lg"
 >
 	<Copy />
-	<form class="h-3/4 w-full border-b border-gray-200 pb-5">
+	<form class="h-3/4 w-full border-b border-gray-200 pb-8">
 		<div class="flex w-full">
 			<div class="w-1/2">
 				<label
@@ -35,4 +36,7 @@
 			<AddressInput />
 		</div>
 	</form>
+	<div class="my-6">
+		<FaucetButton />
+	</div>
 </div>
