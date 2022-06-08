@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { SUPPORTED_TOKENS } from "@/constants";
+	import { token, setToken } from "@/stores/faucet";
 
 	let selectedToken = "CENNZ";
+
+	$: {
+		setToken(selectedToken);
+	}
 </script>
 
 <div

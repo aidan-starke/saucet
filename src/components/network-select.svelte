@@ -1,12 +1,16 @@
 <script lang="ts">
 	import type { CENNZnetNetwork } from "@/types";
+	import { network } from "@/stores/faucet";
 
-	const NIKAU: CENNZnetNetwork = "Nikau";
-	const RATA: CENNZnetNetwork = "Rata";
+	const NIKAU = "Nikau";
+	const RATA = "Rata";
+	let networks: CENNZnetNetwork[] = [NIKAU, RATA];
 
-	let selectedNetwork = "Nikau";
+	let selectedNetwork: CENNZnetNetwork = "Nikau";
 
-	let networks = [NIKAU, RATA];
+	$: {
+		network.set(selectedNetwork);
+	}
 </script>
 
 <div
