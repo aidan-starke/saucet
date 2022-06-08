@@ -18,7 +18,7 @@
 	bind:value={input}
 />
 {#if !isValidAddress}
-	<div class="m-auto w-48 text-sm" transition:fade>
+	<div class="ml-1.5 w-48 text-sm" transition:fade>
 		<div
 			class="align-content-center m-5 flex rounded-md border border-solid border-yellow-400 p-2 text-center shadow danger-arrow-top"
 		>
