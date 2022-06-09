@@ -1,4 +1,4 @@
-import { appAuth } from "@/utils/appAuth";
+import { appAuth } from "$lib/utils/appAuth";
 import type { Handle, GetSession } from "@sveltejs/kit";
 import { sequence } from "@sveltejs/kit/hooks";
 

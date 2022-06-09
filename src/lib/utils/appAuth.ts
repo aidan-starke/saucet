@@ -1,15 +1,16 @@
 import { SvelteKitAuth } from "sk-auth";
 import { GitHubOAuth2Provider } from "sk-auth/providers";
-
+import { dev } from "$app/env"
 import {
 	GITHUB_CLIENT_ID,
 	GITHUB_CLIENT_SECRET,
 	OAUTH_JWT_SECRET_KEY,
-} from "@/constants";
+} from "$lib/constants";
+
 
 // Customize AuthConfig settings for development. Assumes callback URL
 // of http://localhost:3000/api/auth/callback/github configured on GitHub.
-const developmentOptions = !process.env.PROD
+const developmentOptions = dev
 	? {
 			host: "localhost:3000",
 			protocol: "http",

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { CENNZnetNetwork } from "@/types";
-	import { network } from "@/stores/faucet";
+	import type { CENNZnetNetwork } from "$lib/types";
+	import { network } from "$lib/stores/faucet";
 
 	const NIKAU = "Nikau";
 	const RATA = "Rata";

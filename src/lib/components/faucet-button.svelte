@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { GithubSession } from "@/types";
+	import type { GithubSession } from "$lib/types";
 
 	import { fade } from "svelte/transition";
 	import { session } from "$app/stores";

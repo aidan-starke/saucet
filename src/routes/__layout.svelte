@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { MetaMaskInpageProvider } from "@metamask/providers";
 
-	import "@/app.css";
+	import "$lib/app.css";
 	import { onMount } from "svelte";
 	import detectEthereumProvider from "@metamask/detect-provider";
-	import { extension } from "@/stores/metamask";
+	import { extension } from "$lib/stores/metamask";
 
 	onMount(() => {
 		detectEthereumProvider({ mustBeMetaMask: true }).then((provider) =>
@@ -18,7 +18,7 @@
 </svelte:head>
 
 <div
-	class="z-0 flex h-screen h-screen items-center overflow-auto bg-[#f5ecff] bg-[url('@/assets/bg.svg')] font-sans"
+	class="z-0 flex h-screen h-screen items-center overflow-auto bg-[#f5ecff] bg-[url('$lib/assets/bg.svg')] font-sans"
 >
 	<slot />
 </div>

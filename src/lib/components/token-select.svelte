@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { SUPPORTED_TOKENS } from "@/constants";
-	import { setToken } from "@/stores/faucet";
+	import { SUPPORTED_TOKENS } from "$lib/constants";
+	import { setToken } from "$lib/stores/faucet";
 
 	let selectedToken = "CENNZ";
 

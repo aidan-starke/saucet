@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export type CENNZnetNetwork = "Nikau" | "Rata";
 
 export interface CENNZnetToken {
@@ -11,7 +9,7 @@ export interface CENNZnetToken {
 
 export interface TxStatus {
 	status: "in-progress" | "success" | "fail";
-	message: ReactNode;
+	message: unknown;
 	balance?: string;
 }
 

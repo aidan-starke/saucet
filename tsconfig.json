@@ -12,7 +12,8 @@
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "$lib": ["src/lib"],
+      "$lib/*": ["src/lib/*"]
     }
   },
   "exclude": ["node_modules"]

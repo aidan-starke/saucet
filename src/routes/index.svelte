@@ -1,9 +1,11 @@
 <script lang="ts">
-	import Copy from "@/components/copy.svelte";
-	import TokenSelect from "@/components/token-select.svelte";
-	import NetworkSelect from "@/components/network-select.svelte";
-	import AddressInput from "@/components/address-input.svelte";
-	import FaucetButton from "@/components/faucet-button.svelte";
+	import {
+		AddressInput,
+		Copy,
+		TokenSelect,
+		NetworkSelect,
+		FaucetButton,
+	} from "$lib/components";
 </script>
 
 <div
@@ -15,14 +17,16 @@
 			<div class="w-1/2">
 				<label
 					class="text-md mb-1 ml-6 font-semibold uppercase text-[#9847FF]"
-					for="tokens">Token</label
+					for="tokens"
+					>Token</label
 				>
 				<TokenSelect />
 			</div>
 			<div class="w-1/2">
 				<label
 					class="text-md mb-1 ml-6 font-semibold uppercase text-[#9847FF]"
-					for="tokens">Network</label
+					for="tokens"
+					>Network</label
 				>
 				<NetworkSelect />
 			</div>
@@ -30,7 +34,8 @@
 		<div class="m-auto mt-4 block w-full">
 			<label
 				class="text-md mb-1 ml-6 font-semibold uppercase text-[#9847FF]"
-				for="address">Address</label
+				for="address"
+				>Address</label
 			>
 			<AddressInput />
 		</div>

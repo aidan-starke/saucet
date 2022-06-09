@@ -1,7 +1,7 @@
 import type { MetaMaskInpageProvider } from "@metamask/providers";
-import type { CENNZnetNetwork } from "@/types";
-import { NETWORKS } from "@/constants";
-import { addCENNZnetToMetaMask } from "@/utils";
+import type { CENNZnetNetwork } from "$lib/types";
+import { NETWORKS } from "$lib/constants";
+import { addCENNZnetToMetaMask } from "$lib/utils";
 
 export default async function ensureEthereumChain(
 	extension: MetaMaskInpageProvider,

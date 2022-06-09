@@ -1,8 +1,8 @@
 import type { Writable } from "svelte/store";
-import type { CENNZnetNetwork } from "@/types";
+import type { CENNZnetNetwork } from "$lib/types";
 
-import { network } from "@/stores/faucet";
-import { NIKAU_API_URL, RATA_API_URL } from "@/constants";
+import { network } from "$lib/stores/faucet";
+import { NIKAU_API_URL, RATA_API_URL } from "$lib/constants";
 
 import { derived } from "svelte/store";
 import { Api } from "@cennznet/api";
