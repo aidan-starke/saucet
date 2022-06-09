@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
 	let validAccount = false;
+
 	$: buttonText = validAccount ? "send tokens" : "sign in with twitter";
 
 	const handleButtonClick = () => {

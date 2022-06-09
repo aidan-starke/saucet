@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { setAddressType, address } from "@/stores/faucet";
+	import { setAddressType, address } from "@/stores/address";
 	import { fade } from "svelte/transition";
+
 	let input = "";
 
 	$: isValidAddress = input ? setAddressType(input) : true;
