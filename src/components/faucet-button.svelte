@@ -4,13 +4,24 @@
 	import { fade } from "svelte/transition";
 	import { session } from "$app/stores";
 
+	import {
+	GITHUB_CLIENT_ID,
+	GITHUB_CLIENT_SECRET,
+	OAUTH_JWT_SECRET_KEY,
+} from "@/constants";
+
 	$: githubAccount = ($session as GithubSession).user?.login ?? undefined;
 
 	$: buttonText = githubAccount ? "send tokens" : "sign in with github";
 
 	$: {
 		console.log("debugging github account, session:", $session)
-		console.log("debugging github account, githubAccount:", $session)
+		console.log("debugging github account, githubAccount:", githubAccount)
+		console.log("debugging github account, githubAccount:", {
+	GITHUB_CLIENT_ID,
+	GITHUB_CLIENT_SECRET,
+	OAUTH_JWT_SECRET_KEY,
+})
 	}
 </script>
 
