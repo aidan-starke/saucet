@@ -1,4 +1,4 @@
-import type { CENNZnetToken } from "@/types";
+import type { CENNZnetToken, MetamaskNetworks } from "@/types";
 
 export const SUPPORTED_TOKENS: CENNZnetToken[] = [
 	{
@@ -17,3 +17,18 @@ export const SUPPORTED_TOKENS: CENNZnetToken[] = [
 
 export const NIKAU_API_URL = process.env.VITE_CENNZNET_NIKAU_API_URL;
 export const RATA_API_URL = process.env.VITE_CENNZNET_RATA_API_URL;
+
+export const NETWORKS: MetamaskNetworks = {
+	Nikau: {
+		blockExplorerUrl: "https://nikau.uncoverexplorer.com",
+		chainId: "0xbb9",
+		chainName: "CENNZnet Nikau",
+		rpcUrl: "https://nikau.centrality.me/public",
+	},
+	Rata: {
+		blockExplorerUrl: "https://rata.uncoverexplorer.com",
+		chainId: "0xbb8",
+		chainName: "CENNZnet Rata",
+		rpcUrl: "https://rata.centrality.me/public",
+	},
+};

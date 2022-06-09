@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { CENNZ_LOGO } from "@/assets";
 	import Tooltip from "@/components/tooltip.svelte";
+	import { ensureEthereumChain } from "@/utils";
+	import { network } from "@/stores/faucet";
+	import { extension } from "@/stores/metamask";
+
+	const onHereClick = async () => {
+		await ensureEthereumChain($extension, $network);
+	};
 </script>
 
 <div class="my-6 mr-6 flex items-start">
@@ -35,7 +42,7 @@
 			Click
 			<span
 				class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
-				>here</span
+				on:click={onHereClick}>here</span
 			>
 			to add
 			<em
