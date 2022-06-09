@@ -39,4 +39,10 @@ export interface PropsWithChildren {
 	children?: ReactNode;
 }
 
+export interface GithubSession extends Session {
+	user: {
+		login: string;
+	};
+}
+
 declare module "*.svg";

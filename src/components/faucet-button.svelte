@@ -1,27 +1,32 @@
 <script lang="ts">
+	import type { GithubSession } from "@/types";
+
 	import { fade } from "svelte/transition";
-	let validAccount = false;
+	import { session } from "$app/stores";
 
-	$: buttonText = validAccount ? "send tokens" : "sign in with twitter";
+	$: githubAccount = ($session as GithubSession).user?.login ?? undefined;
 
-	const handleButtonClick = () => {
-		if (!validAccount) return (validAccount = true);
-	};
+	$: buttonText = githubAccount ? "send tokens" : "sign in with github";
 </script>
 
-<button
-	class="m-auto block rounded border border-[#9847FF] py-3 px-6 font-semibold uppercase text-[#9847FF] transition duration-300 hover:border-white hover:bg-[#9847FF] hover:text-white"
+<a
+	class="text-md m-auto block w-64 rounded border border-[#9847FF] py-3 px-6 text-center font-semibold uppercase text-[#9847FF] transition duration-300 hover:border-white hover:bg-[#9847FF] hover:text-white"
 	transition:fade
-	on:click={handleButtonClick}
+	href="/api/auth/signin/github?redirect=/"
 >
 	{buttonText}
-</button>
-{#if validAccount}
+</a>
+
+{#if githubAccount}
 	<div
-		class="mx-auto my-2 text-center text-sm font-normal italic text-gray-400 underline hover:cursor-pointer"
-		transition:fade
-		on:click={() => (validAccount = false)}
+		class="mx-auto my-2 text-center text-sm font-normal italic text-gray-400"
 	>
-		Sign out @twitterhandle
+		<a
+			class="hover:cursor-pointer hover:underline"
+			transition:fade
+			href="/api/auth/signout"
+		>
+			Sign out {githubAccount}
+		</a>
 	</div>
 {/if}

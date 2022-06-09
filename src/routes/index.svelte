@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import { address, addressType, network} from "@/stores/faucet";
 	import Copy from "@/components/copy.svelte";
 	import TokenSelect from "@/components/token-select.svelte";
 	import NetworkSelect from "@/components/network-select.svelte";

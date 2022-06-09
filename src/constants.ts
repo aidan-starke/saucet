@@ -32,3 +32,12 @@ export const NETWORKS: MetamaskNetworks = {
 		rpcUrl: "https://rata.centrality.me/public",
 	},
 };
+
+export const TWITTER_API_KEY: string = process.env.VITE_TWITTER_API_KEY || "";
+export const TWITTER_API_SECRET: string =
+	process.env.VITE_TWITTER_API_SECRET || "";
+
+export const GITHUB_CLIENT_ID = process.env.VITE_GITHUB_CLIENT_ID || "";
+export const GITHUB_CLIENT_SECRET = process.env.VITE_GITHUB_CLIENT_SECRET || "";
+export const OAUTH_REDIRECT_URI = process.env.VITE_OAUTH_REDIRECT_URI || "";
+export const OAUTH_JWT_SECRET_KEY = process.env.VITE_OAUTH_JWT_SECRET_KEY || "";
