@@ -16,6 +16,9 @@ const config = {
 			resolve: {
 				alias: { "@": path.resolve("./src") },
 			},
+			define: {
+				"process.env": process.env,
+			},
 		},
 	},
 };

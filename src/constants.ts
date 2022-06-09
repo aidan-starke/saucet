@@ -14,3 +14,6 @@ export const SUPPORTED_TOKENS: CENNZnetToken[] = [
 		decimals: 4,
 	},
 ];
+
+export const NIKAU_API_URL = process.env.VITE_CENNZNET_NIKAU_API_URL;
+export const RATA_API_URL = process.env.VITE_CENNZNET_RATA_API_URL;
