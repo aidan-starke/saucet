@@ -7,6 +7,11 @@
 	$: githubAccount = ($session as GithubSession).user?.login ?? undefined;
 
 	$: buttonText = githubAccount ? "send tokens" : "sign in with github";
+
+	$: {
+		console.log("debugging github account, session:", $session)
+		console.log("debugging github account, githubAccount:", $session)
+	}
 </script>
 
 <a
