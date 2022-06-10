@@ -12,14 +12,15 @@ export const cennzAddress = derived<Writable<string>, string>(
 		isEthereumAddress($address) ? cvmToAddress($address) : $address
 );
 
-export const isValidAddress = derived<Writable<string>, boolean>(address, ($address) => {
-	if (!$address?.length) return true;
+export const isValidAddress = derived<Writable<string>, boolean>(
+	address,
+	($address) => {
+		if (!$address?.length) return true;
 
-	if (isCENNZAddress($address)) 
-		return true;
-	
-	if (isEthereumAddress($address)) 
-		return true;
+		if (isCENNZAddress($address)) return true;
 
-	return false;
-})
+		if (isEthereumAddress($address)) return true;
+
+		return false;
+	}
+);

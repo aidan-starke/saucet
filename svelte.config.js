@@ -14,8 +14,7 @@ const config = {
 		adapter: adapter(),
 		vite: {
 			resolve: {
-				alias: { "@": path.resolve("./src"),  },
-
+				alias: { "@": path.resolve("./src") },
 			},
 			define: {
 				"process.env": process.env,

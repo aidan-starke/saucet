@@ -28,9 +28,9 @@ export interface MetamaskNetworks {
 export type Chain = "CENNZnet" | "Ethereum";
 
 export interface GenericCoin {
-	decimals: number;
-	decimalsValue: number;
-	symbol: string;
+	decimals?: number;
+	decimalsValue?: number;
+	symbol?: string;
 }
 
 export interface PropsWithChildren {
@@ -41,6 +41,10 @@ export interface GithubSession extends Session {
 	user: {
 		login: string;
 	};
+}
+
+export interface ExtrinsicError {
+	message: string;
 }
 
 declare module "*.svg";

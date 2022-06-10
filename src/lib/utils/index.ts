@@ -1,11 +1,11 @@
-// export { EndowedAccounts } from "$lib/utils/EndowedAccounts";
-// export { errMsgFilter } from "$lib/utils/errorHandling";
-// export { default as supplyAccount } from "$lib/utils/supplyAccount";
+export { default as EndowedAccounts } from "$lib/utils/EndowedAccounts";
+export { default as errorMessageFilter } from "$lib/utils/errorMessageFilter";
+export { default as supplyAccount } from "$lib/utils/supplyAccount";
 export { default as addCENNZnetToMetaMask } from "$lib/utils/addCENNZnetToMetaMask";
 export { default as addCENNZTokenToMetaMask } from "$lib/utils/addCENNZTokenToMetaMask";
-// export { default as Balance } from "$lib/utils/Balance";
+export { default as Balance } from "$lib/utils/Balance";
 export { default as ensureEthereumChain } from "$lib/utils/ensureEthereumChain";
 export { default as isCENNZAddress } from "$lib/utils/isCENNZAddress";
 export { default as isEthereumAddress } from "$lib/utils/isEthereumAddress";
 // export { default as trackPageView } from "$lib/utils/trackPageView";
-// export { default as fetchBalance } from "$lib/utils/fetchBalance";
+export { default as fetchBalance } from "$lib/utils/fetchBalance";

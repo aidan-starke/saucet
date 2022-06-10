@@ -37,6 +37,8 @@ export const NIKAU_API_URL = import.meta.env.VITE_CENNZNET_NIKAU_API_URL;
 export const RATA_API_URL = import.meta.env.VITE_CENNZNET_RATA_API_URL;
 
 export const GITHUB_CLIENT_ID = import.meta.env.VITE_GITHUB_CLIENT_ID || "";
-export const GITHUB_CLIENT_SECRET = import.meta.env.VITE_GITHUB_CLIENT_SECRET || "";
+export const GITHUB_CLIENT_SECRET =
+	import.meta.env.VITE_GITHUB_CLIENT_SECRET || "";
 export const OAUTH_REDIRECT_URI = import.meta.env.VITE_OAUTH_REDIRECT_URI || "";
-export const OAUTH_JWT_SECRET_KEY = import.meta.env.VITE_OAUTH_JWT_SECRET_KEY || "";
+export const OAUTH_JWT_SECRET_KEY =
+	import.meta.env.VITE_OAUTH_JWT_SECRET_KEY || "";
