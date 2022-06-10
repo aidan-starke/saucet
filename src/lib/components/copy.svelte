@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { CENNZ_LOGO } from "$lib/assets";
 	import {Tooltip} from "$lib/components";
-	import { ensureEthereumChain } from "$lib/utils";
+	import { addCENNZTokenToMetaMask, ensureEthereumChain } from "$lib/utils";
 	import { network } from "$lib/stores/faucet";
 	import { extension } from "$lib/stores/metamask";
 
 	const onHereClick = async () => {
-		await ensureEthereumChain($extension, $network);
+		await ensureEthereumChain($extension, $network).then(() => addCENNZTokenToMetaMask($extension));
 	};
 </script>
 

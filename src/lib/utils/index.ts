@@ -2,7 +2,7 @@
 // export { errMsgFilter } from "$lib/utils/errorHandling";
 // export { default as supplyAccount } from "$lib/utils/supplyAccount";
 export { default as addCENNZnetToMetaMask } from "$lib/utils/addCENNZnetToMetaMask";
-// export { default as addCENNZTokenToMetaMask } from "$lib/utils/addCENNZTokenToMetaMask";
+export { default as addCENNZTokenToMetaMask } from "$lib/utils/addCENNZTokenToMetaMask";
 // export { default as Balance } from "$lib/utils/Balance";
 export { default as ensureEthereumChain } from "$lib/utils/ensureEthereumChain";
 export { default as isCENNZAddress } from "$lib/utils/isCENNZAddress";
