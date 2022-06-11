@@ -1,16 +1,18 @@
 import type { CENNZnetToken, MetamaskNetworks } from "$lib/types";
 
+import { CENNZ, CPAY } from "$lib/assets";
+
 export const SUPPORTED_TOKENS: CENNZnetToken[] = [
 	{
 		symbol: "CENNZ",
 		assetId: 16000,
-		logo: "cennz.svg",
+		logo: CENNZ,
 		decimals: 4,
 	},
 	{
 		symbol: "CPAY",
 		assetId: 16001,
-		logo: "cpay.svg",
+		logo: CPAY,
 		decimals: 4,
 	},
 ];
