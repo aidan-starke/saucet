@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { isValidAddress, address } from "$lib/stores";
-	import { fade } from "svelte/transition";
+	import { fade, fly } from "svelte/transition";
 	import { Invalid } from "$lib/icons";
 
 	$: displayAvatar = $address && $isValidAddress;
@@ -35,7 +35,11 @@
 	/>
 </span>
 {#if !$isValidAddress}
-	<div class="absolute ml-1.5 w-48 text-sm" transition:fade>
+	<div
+		class="absolute ml-1.5 w-48 text-sm"
+		in:fly={{ y: 20, duration: 200 }}
+		out:fade
+	>
 		<div
 			class="align-content-center -top-4 m-5 flex rounded-md border border-solid border-yellow-400 bg-white p-2 text-center shadow danger-arrow-top"
 		>
