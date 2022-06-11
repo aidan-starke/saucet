@@ -15,19 +15,15 @@
 	<img src={CENNZ_LOGO} class="mt-2 w-24 sm:ml-3 md:ml-6" alt="CENNZnet Logo" />
 	<div class="ml-8 text-lg lg:mr-2">
 		<p class="mb-3">
-			Bootstrap your wallet with <strong>2000</strong>
+			Bootstrap your wallet with <strong>1</strong>
 			<em class="token-symbol">CENNZ</em>
 			and{" "}
 			<em class="token-symbol">CPAY</em>
 			across our testnet networks.
 		</p>
 		<p class="sm:mb-6 md:mb-3">
-			One claim per day per token is allowed.
-			<br />
-			<Tooltip
-				message="Account must have at least 1 tweet, 15 followers, and be older than 1 month."
-			>
-				A&nbsp;<span class="fancy-link">legitimate Twitter account</span>&nbsp;
+			<Tooltip message="This faucet is for the CENNZnet team">
+				A&nbsp;<span class="fancy-link">legitimate GitHub account</span>&nbsp;
 				is required.</Tooltip
 			>
 		</p>

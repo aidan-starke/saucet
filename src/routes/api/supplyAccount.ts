@@ -14,16 +14,28 @@ export const post: RequestHandler = async ({ request }) => {
 		.clone()
 		.json();
 
+	if (!assetId)
+		return {
+			status: 400,
+			body: { success: false, error: "No asset provided" },
+		};
+
 	if (!cennzAddress)
 		return {
 			status: 400,
 			body: { success: false, error: "No address provided" },
 		};
 
-	if (githubAccount !== "aidan-starke")
+	if (!githubAccount)
 		return {
 			status: 400,
-			body: { success: false, error: "TODO: check for CENNZnet org" },
+			body: { success: false, error: "No GitHub account provided" },
+		};
+
+	if (!network)
+		return {
+			status: 400,
+			body: { success: false, error: "No network provided" },
 		};
 
 	try {
