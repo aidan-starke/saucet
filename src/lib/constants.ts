@@ -34,22 +34,21 @@ export const CENNZ_IPFS =
 	"https://gateway.pinata.cloud/ipfs/QmfDkgrhCFfVJErVVDuU7UYasYsooXMEXFhBzLMNm6pgey";
 
 export const NIKAU_API_URL: string =
-	import.meta.env.VITE_CENNZNET_NIKAU_API_URL || "";
+	process.env.VITE_CENNZNET_NIKAU_API_URL || "";
 export const RATA_API_URL: string =
-	import.meta.env.VITE_CENNZNET_RATA_API_URL || "";
+	process.env.VITE_CENNZNET_RATA_API_URL || "";
 
 export const ENDOWED_ACCOUNT_SEEDS: string[] = String(
-	import.meta.env.VITE_ENDOWED_ACCOUNT_SEEDS
+	process.env.ENDOWED_ACCOUNT_SEEDS
 ).split(",");
 
 export const TRANSFER_AMOUNT: number =
-	Number(import.meta.env.VITE_TRANSFER_AMOUNT) || 0;
+	Number(process.env.VITE_TRANSFER_AMOUNT) || 0;
 
-export const GITHUB_CLIENT_ID: string =
-	import.meta.env.VITE_GITHUB_CLIENT_ID || "";
+export const GITHUB_CLIENT_ID: string = process.env.GITHUB_CLIENT_ID || "";
 export const GITHUB_CLIENT_SECRET: string =
-	import.meta.env.VITE_GITHUB_CLIENT_SECRET || "";
+	process.env.GITHUB_CLIENT_SECRET || "";
 export const OAUTH_REDIRECT_URI: string =
-	import.meta.env.VITE_OAUTH_REDIRECT_URI || "";
+	process.env.VITE_OAUTH_REDIRECT_URI || "";
 export const OAUTH_JWT_SECRET_KEY: string =
-	import.meta.env.VITE_OAUTH_JWT_SECRET_KEY || "";
+	process.env.OAUTH_JWT_SECRET_KEY || "";
