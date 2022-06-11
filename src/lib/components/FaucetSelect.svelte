@@ -2,6 +2,7 @@
 	import type { CENNZnetNetwork } from "$lib/types";
 
 	import { Chevron } from "$lib/icons";
+	import { clickOutside } from "$lib/utils";
 
 	export let defaultOption: string;
 	export let id: string;
@@ -14,10 +15,11 @@
 	const onOptionClick = (option: string) => {
 		selectedOption = option;
 		onSelect(option);
+		isOpen = false;
 	};
 </script>
 
-<div class="w-5/6">
+<div class="w-5/6" use:clickOutside on:click_outside={() => (isOpen = false)}>
 	<button
 		{id}
 		data-dropdown-toggle={`dropdown-${id}`}
