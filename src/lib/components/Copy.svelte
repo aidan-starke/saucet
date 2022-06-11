@@ -21,7 +21,7 @@
 	/>
 	<div class="ml-8 text-lg lg:mr-2">
 		<p class="mb-3">
-			Bootstrap your wallet with <strong>1</strong>
+			Bootstrap your wallet with <strong>2000</strong>
 			<em class="token-symbol">CENNZ</em>
 			and{" "}
 			<em class="token-symbol">CPAY</em>
