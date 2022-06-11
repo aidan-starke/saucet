@@ -7,11 +7,11 @@
 </script>
 
 <span
-	class="relative ml-6 mt-1 flex h-12 rounded border-gray-200 font-mono text-sm hover:border-[#9847FF] sm:w-[28.25rem] md:w-[31.1rem] lg:w-[36rem]"
+	class="relative ml-6 mt-1 flex h-12 min-h-full rounded border-gray-200 font-mono text-sm hover:border-[#9847FF] sm:w-[28.25rem] md:w-[31.1rem] lg:w-[35.75rem] xl:w-[37.6rem]"
 >
 	{#if displayAvatar}
 		<div
-			class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+			class="pointer-events-none absolute inset-y-0 left-0 mt-3 flex items-center pl-3 lg:mt-0"
 		>
 			<img
 				src={`https://avatars.dicebear.com/api/gridy/${parseInt(
@@ -20,14 +20,14 @@
 				)}.svg`}
 				class="h-8"
 				alt="avatar"
-				transition:fade
+				in:fade
 			/>
 		</div>
 	{/if}
-	<input
+	<textarea
 		id="address"
 		type="text"
-		class={`inline-flex h-full font-mono rounded sm:text-xs md:text-[0.82rem] lg:text-sm tracking-wider hover:border-[#9847FF] pl-2 w-full bg-transparent ${
+		class={`block h-16 w-full overflow-clip rounded bg-transparent bg-clip-padding px-3 font-mono tracking-wider hover:border-[#9847FF] lg:h-full lg:pt-3 ${
 			displayAvatar && "pl-14"
 		}`}
 		placeholder="Enter a CENNZnet or Ethereum address"

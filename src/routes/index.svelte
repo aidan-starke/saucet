@@ -54,7 +54,7 @@
 </script>
 
 <div
-	class="relative m-auto overflow-hidden rounded-lg bg-white p-2 shadow-lg sm:w-[32rem] md:w-[35rem] lg:w-[40rem]"
+	class="relative m-auto w-[28rem] overflow-hidden rounded-lg bg-white p-2 shadow-lg sm:w-[32rem] md:w-[35rem] lg:w-[40rem] xl:w-[42rem]"
 >
 	<Copy />
 	{#if $progressOpen}
@@ -63,7 +63,7 @@
 	<form on:submit|preventDefault={onSubmit}>
 		<div class="h-3/4 w-full border-b border-gray-200 pb-8">
 			<div class="flex w-full">
-				<div class="w-1/2">
+				<div class="flex-1">
 					<label class="faucet-label" for="tokens">Token</label>
 					<FaucetSelect
 						defaultOption="CENNZ"
@@ -72,7 +72,7 @@
 						options={SUPPORTED_TOKENS.map((token) => token.symbol)}
 					/>
 				</div>
-				<div class="w-1/2">
+				<div class="flex-1">
 					<label class="faucet-label" for="networks">Network</label>
 					<FaucetSelect
 						defaultOption="Nikau"
@@ -82,7 +82,7 @@
 					/>
 				</div>
 			</div>
-			<div class="m-auto mt-4 block w-full">
+			<div class="m-auto mt-4 block w-full pr-3">
 				<label class="faucet-label" for="address">Address</label>
 				<AddressInput />
 			</div>
