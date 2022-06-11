@@ -2,15 +2,38 @@
 	import { isValidAddress, address } from "$lib/stores/address";
 	import { fade } from "svelte/transition";
 	import { Invalid } from "$lib/icons";
+
+	$: displayAvatar = $address && $isValidAddress;
 </script>
 
-<input
-	id="address"
-	type="text"
-	class="ml-6 mt-1 block h-10 rounded border border-gray-400 pl-2 font-mono text-sm hover:border-[#9847FF] sm:w-[28.25rem] md:w-[31.1rem] lg:w-[36rem]"
-	placeholder="Enter a CENNZnet or Ethereum address"
-	bind:value={$address}
-/>
+<span
+	class="relative ml-6 mt-1 flex h-12 rounded border border-gray-400 font-mono text-sm hover:border-[#9847FF] sm:w-[28.25rem] md:w-[31.1rem] lg:w-[36rem]"
+>
+	{#if displayAvatar}
+		<div
+			class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+		>
+			<img
+				src={`https://avatars.dicebear.com/api/gridy/${parseInt(
+					$address.slice(2, 10),
+					16
+				)}.svg`}
+				class="h-8"
+				alt="avatar"
+				transition:fade
+			/>
+		</div>
+	{/if}
+	<input
+		id="address"
+		type="text"
+		class={`inline-flex h-full font-mono sm:text-xs md:text-[0.82rem] lg:text-sm tracking-wider hover:border-[#9847FF] pl-2 w-full bg-transparent ${
+			displayAvatar && "pl-14"
+		}`}
+		placeholder="Enter a CENNZnet or Ethereum address"
+		bind:value={$address}
+	/>
+</span>
 {#if !$isValidAddress}
 	<div class="absolute ml-1.5 w-48 text-sm" transition:fade>
 		<div
