@@ -7,5 +7,4 @@ export { default as Balance } from "$lib/utils/Balance";
 export { default as ensureEthereumChain } from "$lib/utils/ensureEthereumChain";
 export { default as isCENNZAddress } from "$lib/utils/isCENNZAddress";
 export { default as isEthereumAddress } from "$lib/utils/isEthereumAddress";
-// export { default as trackPageView } from "$lib/utils/trackPageView";
 export { default as fetchBalance } from "$lib/utils/fetchBalance";

@@ -9,11 +9,15 @@
 		FaucetButton,
 		FaucetProgress,
 	} from "$lib/components";
-	import { cennzAddress } from "$lib/stores/address";
-	import { network, token } from "$lib/stores/faucet";
+	import {
+		cennzAddress,
+		network,
+		progressOpen,
+		token,
+		txStatus,
+	} from "$lib/stores";
 	import { Balance, fetchBalance, supplyAccount } from "$lib/utils";
 	import { session } from "$app/stores";
-	import { progressOpen, txStatus } from "$lib/stores/progress";
 
 	const onSubmit = async () => {
 		txStatus.set({ status: "in-progress" });

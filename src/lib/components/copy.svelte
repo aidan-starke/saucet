@@ -2,8 +2,7 @@
 	import { CENNZ_LOGO } from "$lib/assets";
 	import { Tooltip } from "$lib/components";
 	import { addCENNZTokenToMetaMask, ensureEthereumChain } from "$lib/utils";
-	import { network } from "$lib/stores/faucet";
-	import { extension } from "$lib/stores/metamask";
+	import { extension, network } from "$lib/stores";
 
 	const onHereClick = async () => {
 		await ensureEthereumChain($extension, $network).then(() =>

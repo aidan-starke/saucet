@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { GithubSession } from "$lib/types";
+
 	import { fade } from "svelte/transition";
 	import { session } from "$app/stores";
-	import { address, isValidAddress } from "$lib/stores/address";
+	import { address, isValidAddress } from "$lib/stores";
 
 	$: disabled = !$isValidAddress || !$address;
 

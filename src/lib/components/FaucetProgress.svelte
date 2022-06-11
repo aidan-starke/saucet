@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
 	import { Failure, Loading, Success } from "$lib/icons";
-	import { txStatus, progressOpen } from "$lib/stores/progress";
-	import { token } from "$lib/stores/faucet";
+	import { progressOpen, token, txStatus } from "$lib/stores";
 	import { SuccessResponse } from "$lib/components";
+
 	let title: string;
 
 	$: {

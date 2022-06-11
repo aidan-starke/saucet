@@ -1,6 +1,7 @@
-import { NETWORKS } from "$lib/constants";
 import type { MetaMaskInpageProvider } from "@metamask/providers";
 import type { CENNZnetNetwork } from "$lib/types";
+
+import { NETWORKS } from "$lib/constants";
 
 export default async function addCENNZnetToMetaMask(
 	extension: MetaMaskInpageProvider,

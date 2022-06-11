@@ -7,8 +7,6 @@ import {
 	OAUTH_JWT_SECRET_KEY,
 } from "$lib/constants";
 
-// Customize AuthConfig settings for development. Assumes callback URL
-// of http://localhost:3000/api/auth/callback/github configured on GitHub.
 const developmentOptions = dev
 	? {
 			host: "localhost:3000",
@@ -31,10 +29,6 @@ export const appAuth = new SvelteKitAuth({
 			},
 		}),
 	],
-	callbacks: {
-		redirect: (uri) => uri, // Extend or introspect redirect callbacks
-		// ...and access to other available AuthCallbacks as well
-	},
 	...developmentOptions,
 	jwtSecret: OAUTH_JWT_SECRET_KEY,
 });

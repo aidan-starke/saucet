@@ -1,9 +1,10 @@
 import type { Api } from "@cennznet/api";
-import { errorMessageFilter } from "$lib/utils";
-import { Keyring } from "@polkadot/keyring";
 import type { SubmittableExtrinsic } from "@cennznet/api/types";
 import type { ISubmittableResult } from "@cennznet/types";
 import type { ExtrinsicError } from "$lib/types";
+
+import { errorMessageFilter } from "$lib/utils";
+import { Keyring } from "@polkadot/keyring";
 
 interface Phase {
 	applyExtrinsic?: number;

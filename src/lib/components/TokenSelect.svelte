@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { SUPPORTED_TOKENS } from "$lib/constants";
-	import { setToken } from "$lib/stores/faucet";
+	import { setToken } from "$lib/stores";
 
 	let selectedToken = "CENNZ";
 
@@ -16,7 +16,7 @@
 		bind:value={selectedToken}
 		class="h-10 w-full cursor-pointer pl-2 text-sm font-bold"
 	>
-		{#each SUPPORTED_TOKENS as token (token.symbol)}}
+		{#each SUPPORTED_TOKENS as token (token.symbol)}
 			<option value={token.symbol}>{token.symbol}</option>
 		{/each}
 	</select>

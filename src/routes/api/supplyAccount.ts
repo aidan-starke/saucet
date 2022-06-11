@@ -35,14 +35,9 @@ export const post: RequestHandler = async ({ request }) => {
 			case "Rata":
 				networkUrl = RATA_API_URL;
 				break;
-			default:
-				return {
-					status: 400,
-					body: { success: false, error: "No network provided" },
-				};
 		}
 
-		const api = await Api.create({ provider: networkUrl });
+		const api = await Api.create({ provider: networkUrl! });
 		const endowedAccounts = new EndowedAccounts(api, ENDOWED_ACCOUNT_SEEDS);
 
 		await endowedAccounts.init();

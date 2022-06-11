@@ -1,10 +1,11 @@
 <script lang="ts">
+	import "$lib/app.css";
+
 	import type { MetaMaskInpageProvider } from "@metamask/providers";
 
-	import "$lib/app.css";
 	import { onMount } from "svelte";
 	import detectEthereumProvider from "@metamask/detect-provider";
-	import { extension } from "$lib/stores/metamask";
+	import { extension } from "$lib/stores";
 
 	onMount(() => {
 		detectEthereumProvider({ mustBeMetaMask: true }).then((provider) =>

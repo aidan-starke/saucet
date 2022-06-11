@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { network } from "$lib/stores/faucet";
-	import { extension } from "$lib/stores/metamask";
+	import { extension, network } from "$lib/stores";
 	import { addCENNZTokenToMetaMask, ensureEthereumChain } from "$lib/utils";
 
 	export let isCENNZ: boolean;
 
-	const onHereClick = () => {
+	const onHereClick = async () => {
 		if (isCENNZ)
-			return ensureEthereumChain($extension, $network).then(() =>
-				addCENNZTokenToMetaMask($extension)
+			return ensureEthereumChain($extension, $network).then(
+				addCENNZTokenToMetaMask
 			);
 
 		return ensureEthereumChain($extension, $network);

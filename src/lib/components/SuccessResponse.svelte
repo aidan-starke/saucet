@@ -1,13 +1,10 @@
 <script lang="ts">
-	import { token } from "$lib/stores/faucet";
-	import { txStatus } from "$lib/stores/progress";
-	import { extension } from "$lib/stores/metamask";
-	import { address } from "$lib/stores/address";
+	import { address, extension, token, txStatus } from "$lib/stores";
 	import { isEthereumAddress } from "$lib/utils";
 	import { MetaMaskPrompt } from "$lib/components";
 
-	$: isMetamask = isEthereumAddress($address);
 	$: isCENNZ = $token.symbol === "CENNZ";
+	$: isMetamask = isEthereumAddress($address);
 </script>
 
 <div class="mt-4">
