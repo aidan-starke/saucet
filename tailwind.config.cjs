@@ -12,5 +12,9 @@ module.exports = {
 			},
 		}),
 	},
-	plugins: [require("tailwindcss-tooltip-arrow-after")()],
+	plugins: [
+		require("tailwindcss-tooltip-arrow-after")(),
+		require("flowbite/plugin"),
+	],
+	important: true,
 };

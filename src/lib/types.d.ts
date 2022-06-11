@@ -10,7 +10,7 @@ export interface CENNZnetToken {
 }
 
 export interface TxStatus {
-	status: "in-progress" | "success" | "fail";
+	status: "in-progress" | "success" | "fail" | string;
 	balance?: Balance;
 	error?: string;
 }

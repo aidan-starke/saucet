@@ -11,6 +11,7 @@
     "strict": true,
     "module": "ESNext",
     "baseUrl": ".",
+    "types": ["svelte", "node"],
     "paths": {
       "$lib": ["src/lib"],
       "$lib/*": ["src/lib/*"]

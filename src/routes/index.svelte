@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { GithubSession } from "$lib/types";
 
+	import { SUPPORTED_TOKENS, NETWORKS } from "$lib/constants";
 	import {
 		AddressInput,
 		Copy,
-		TokenSelect,
-		NetworkSelect,
 		FaucetButton,
 		FaucetProgress,
+		FaucetSelect,
 	} from "$lib/components";
 	import {
 		cennzAddress,
@@ -15,6 +15,8 @@
 		progressOpen,
 		token,
 		txStatus,
+		setToken,
+		setNetwork,
 	} from "$lib/stores";
 	import { Balance, fetchBalance, supplyAccount } from "$lib/utils";
 	import { session } from "$app/stores";
@@ -63,11 +65,21 @@
 			<div class="flex w-full">
 				<div class="w-1/2">
 					<label class="faucet-label" for="tokens">Token</label>
-					<TokenSelect />
+					<FaucetSelect
+						defaultOption="CENNZ"
+						id="tokens"
+						onSelect={setToken}
+						options={SUPPORTED_TOKENS.map((token) => token.symbol)}
+					/>
 				</div>
 				<div class="w-1/2">
-					<label class="faucet-label" for="tokens">Network</label>
-					<NetworkSelect />
+					<label class="faucet-label" for="networks">Network</label>
+					<FaucetSelect
+						defaultOption="Nikau"
+						id="networks"
+						onSelect={setNetwork}
+						options={Object.keys(NETWORKS)}
+					/>
 				</div>
 			</div>
 			<div class="m-auto mt-4 block w-full">

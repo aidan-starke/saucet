@@ -12,3 +12,6 @@ export const setToken = (symbol: string) => {
 			SUPPORTED_TOKENS.find((token) => token.symbol === symbol) as CENNZnetToken
 	);
 };
+
+export const setNetwork = (selectedNetwork: string) =>
+	network.set(selectedNetwork as CENNZnetNetwork);

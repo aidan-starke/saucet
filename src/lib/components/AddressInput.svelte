@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isValidAddress, address } from "$lib/stores/address";
+	import { isValidAddress, address, txStatus } from "$lib/stores";
 	import { fade } from "svelte/transition";
 	import { Invalid } from "$lib/icons";
 
@@ -7,7 +7,7 @@
 </script>
 
 <span
-	class="relative ml-6 mt-1 flex h-12 rounded border border-gray-400 font-mono text-sm hover:border-[#9847FF] sm:w-[28.25rem] md:w-[31.1rem] lg:w-[36rem]"
+	class="relative ml-6 mt-1 flex h-12 rounded border-gray-200 font-mono text-sm hover:border-[#9847FF] sm:w-[28.25rem] md:w-[31.1rem] lg:w-[36rem]"
 >
 	{#if displayAvatar}
 		<div
@@ -27,7 +27,7 @@
 	<input
 		id="address"
 		type="text"
-		class={`inline-flex h-full font-mono sm:text-xs md:text-[0.82rem] lg:text-sm tracking-wider hover:border-[#9847FF] pl-2 w-full bg-transparent ${
+		class={`inline-flex h-full font-mono rounded sm:text-xs md:text-[0.82rem] lg:text-sm tracking-wider hover:border-[#9847FF] pl-2 w-full bg-transparent ${
 			displayAvatar && "pl-14"
 		}`}
 		placeholder="Enter a CENNZnet or Ethereum address"

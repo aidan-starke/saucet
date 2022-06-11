@@ -19,10 +19,15 @@
 				break;
 		}
 	}
+
+	const onDismiss = () => {
+		txStatus.set({ status: "" });
+		progressOpen.set(false);
+	};
 </script>
 
 <div
-	class="z-100 pointer-events-auto absolute inset-0 flex h-full w-full items-center justify-center bg-white/90 p-5 text-center text-sm backdrop-blur-[2px]"
+	class="pointer-events-auto absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-white/90 p-5 text-center text-sm backdrop-blur-[2px]"
 	transition:fade
 >
 	<div class="flex flex-col items-center justify-center">
@@ -54,7 +59,7 @@
 		{#if $txStatus.status !== "in-progress"}
 			<button
 				class="mt-8 flex h-10 w-28 cursor-pointer items-center justify-center rounded border border-transparent bg-[#9847FF] text-center text-center font-bold uppercase text-white transition duration-300 hover:border-[#9847FF] hover:bg-white hover:text-[#9847FF]"
-				on:click={() => progressOpen.set(false)}
+				on:click={onDismiss}
 				type="button"
 				transition:fade>Dismiss</button
 			>
