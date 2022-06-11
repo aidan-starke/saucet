@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.fancy-link {
+		@apply cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b;
+	}
+
+	.faucet-label {
+		@apply mb-1 ml-6 text-base font-semibold uppercase text-[#9847FF];
+	}
+
+	.token-symbol {
+		@apply inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF];
+	}
+}

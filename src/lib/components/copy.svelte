@@ -16,15 +16,9 @@
 	<div class="ml-8 text-lg">
 		<p class="mb-3">
 			Bootstrap your wallet with <strong>2000</strong>
-			<em
-				class="inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF]"
-				>CENNZ</em
-			>
+			<em class="token-symbol">CENNZ</em>
 			and{" "}
-			<em
-				class="inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF]"
-				>CPAY</em
-			>
+			<em class="token-symbol">CPAY</em>
 			across our testnet networks.
 		</p>
 		<p class="mb-3">
@@ -33,23 +27,15 @@
 			<Tooltip
 				message="Account must have at least 1 tweet, 15 followers, and be older than 1 month."
 			>
-				A&nbsp;<span
-					class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
-					>legitimate Twitter account</span
-				>&nbsp; is required.</Tooltip
+				A&nbsp;<span class="fancy-link">legitimate Twitter account</span>&nbsp;
+				is required.</Tooltip
 			>
 		</p>
 		<p>
 			Click
-			<span
-				class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
-				on:click={onHereClick}>here</span
-			>
+			<span class="fancy-link" on:click={onHereClick}>here</span>
 			to add
-			<em
-				class="inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF]"
-				>CENNZ</em
-			>
+			<em class="token-symbol">CENNZ</em>
 			token to MetaMask before using the faucet with an Ethereum address.
 		</p>
 		<slot />

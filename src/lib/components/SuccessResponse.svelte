@@ -9,10 +9,7 @@
 
 <div class="mt-4">
 	<div class="mb-4">
-		<em
-			class="inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF]"
-			>{$token.symbol}</em
-		>
+		<em class="token-symbol">{$token.symbol}</em>
 		sent successfully!
 	</div>
 	{#if $txStatus?.balance}
@@ -20,10 +17,7 @@
 			Your new account balance is <strong class="font-mono"
 				>{$txStatus.balance.toPretty()}</strong
 			>
-			<em
-				class="inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF]"
-				>{$token.symbol}</em
-			>
+			<em class="token-symbol">{$token.symbol}</em>
 		</div>
 	{/if}
 	{#if extension && isMetamask}

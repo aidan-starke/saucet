@@ -17,22 +17,13 @@
 <div>
 	{#if isCENNZ}
 		Click
-		<span
-			class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
-			on:click={onHereClick}>here</span
-		>
+		<span class="fancy-link" on:click={onHereClick}>here</span>
 		to add
-		<em
-			class="inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF]"
-			>CENNZ</em
-		>
+		<em class="token-symbol">CENNZ</em>
 		to your wallet.
 	{:else}
 		Click
-		<span
-			class="cursor-pointer border-[#E4D1FF] text-[#9847FF] hover:border-b"
-			on:click={onHereClick}>here</span
-		>
+		<span class="fancy-link" on:click={onHereClick}>here</span>
 		to switch to CENNZnet {$network} in MetaMask.
 	{/if}
 </div>

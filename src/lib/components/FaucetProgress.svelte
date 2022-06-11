@@ -42,10 +42,7 @@
 		<div class="mt-2 leading-5">
 			{#if $txStatus.status === "in-progress"}
 				<div>
-					Retrieving <em
-						class="inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF]"
-						>{$token.symbol}</em
-					> from the Faucet
+					Retrieving <em class="token-symbol">{$token.symbol}</em> from the Faucet
 				</div>
 			{:else if $txStatus.status === "success"}
 				<SuccessResponse />

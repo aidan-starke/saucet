@@ -62,25 +62,16 @@
 		<div class="h-3/4 w-full border-b border-gray-200 pb-8">
 			<div class="flex w-full">
 				<div class="w-1/2">
-					<label
-						class="text-md mb-1 ml-6 font-semibold uppercase text-[#9847FF]"
-						for="tokens">Token</label
-					>
+					<label class="faucet-label" for="tokens">Token</label>
 					<TokenSelect />
 				</div>
 				<div class="w-1/2">
-					<label
-						class="text-md mb-1 ml-6 font-semibold uppercase text-[#9847FF]"
-						for="tokens">Network</label
-					>
+					<label class="faucet-label" for="tokens">Network</label>
 					<NetworkSelect />
 				</div>
 			</div>
 			<div class="m-auto mt-4 block w-full">
-				<label
-					class="text-md mb-1 ml-6 font-semibold uppercase text-[#9847FF]"
-					for="address">Address</label
-				>
+				<label class="faucet-label" for="address">Address</label>
 				<AddressInput />
 			</div>
 		</div>
