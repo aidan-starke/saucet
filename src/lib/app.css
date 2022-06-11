@@ -11,6 +11,14 @@
 		@apply mb-1 ml-6 text-base font-semibold uppercase text-[#9847FF];
 	}
 
+	.faucet-select {
+		@apply h-10 w-full cursor-pointer bg-transparent pl-2 text-sm font-bold;
+	}
+
+	.faucet-select-wrapper {
+		@apply m-auto mt-1 block w-5/6 appearance-none rounded border border-gray-400 pr-1 hover:border-[#9847FF];
+	}
+
 	.token-symbol {
 		@apply inline-block rounded-md border-2 border-[#E4D1FF] py-1 px-1.5 text-sm font-bold leading-5 text-[#9847FF];
 	}
