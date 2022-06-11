@@ -1,3 +1,5 @@
+import type { Balance } from "$lib/utils";
+
 export type CENNZnetNetwork = "Nikau" | "Rata";
 
 export interface CENNZnetToken {
@@ -9,8 +11,8 @@ export interface CENNZnetToken {
 
 export interface TxStatus {
 	status: "in-progress" | "success" | "fail";
-	message: unknown;
-	balance?: string;
+	error?: string;
+	balance?: Balance;
 }
 
 interface MetaMaskNetwork {

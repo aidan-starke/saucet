@@ -1,5 +1,6 @@
-import { appAuth } from "$lib/utils/appAuth";
 import type { Handle, GetSession } from "@sveltejs/kit";
+
+import { appAuth } from "$lib/utils/appAuth";
 import { sequence } from "@sveltejs/kit/hooks";
 
 interface EventLocals {

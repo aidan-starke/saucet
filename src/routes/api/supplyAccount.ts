@@ -14,10 +14,17 @@ export const post: RequestHandler = async ({ request }) => {
 		.clone()
 		.json();
 
-	if (!cennzAddress) throw { message: "No address provided" };
+	if (!cennzAddress)
+		return {
+			status: 400,
+			body: { success: false, error: "No address provided" },
+		};
 
 	if (githubAccount !== "aidan-starke")
-		throw { message: "TODO: check for CENNZnet org" };
+		return {
+			status: 400,
+			body: { success: false, error: "TODO: check for CENNZnet org" },
+		};
 
 	try {
 		let networkUrl: string;
@@ -29,7 +36,10 @@ export const post: RequestHandler = async ({ request }) => {
 				networkUrl = RATA_API_URL;
 				break;
 			default:
-				throw { message: "No network provided" };
+				return {
+					status: 400,
+					body: { success: false, error: "No network provided" },
+				};
 		}
 
 		const api = await Api.create({ provider: networkUrl });
@@ -46,7 +56,7 @@ export const post: RequestHandler = async ({ request }) => {
 	} catch (err: any) {
 		return {
 			status: 400,
-			body: { success: false, message: err.message || "" },
+			body: { success: false, error: err.message },
 		};
 	}
 };

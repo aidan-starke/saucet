@@ -7,24 +7,42 @@
 		TokenSelect,
 		NetworkSelect,
 		FaucetButton,
+		FaucetProgress,
 	} from "$lib/components";
 	import { cennzAddress } from "$lib/stores/address";
 	import { network, token } from "$lib/stores/faucet";
-	import { supplyAccount } from "$lib/utils";
+	import { Balance, fetchBalance, supplyAccount } from "$lib/utils";
 	import { session } from "$app/stores";
+	import { progressOpen, txStatus } from "$lib/stores/progress";
 
 	const onSubmit = async () => {
+		txStatus.set({ status: "in-progress" });
+		progressOpen.set(true);
+
 		try {
-			const response = await supplyAccount(
+			const supplyResponse = await supplyAccount(
 				$cennzAddress,
 				$network,
 				$token.assetId,
 				($session as GithubSession).user?.login
 			);
 
-			console.log(response);
+			if (supplyResponse.success) {
+				const balanceRaw = await fetchBalance(
+					$cennzAddress,
+					$token.assetId,
+					$network
+				);
+
+				return txStatus.set({
+					status: "success",
+					balance: Balance.fromApiBalance(balanceRaw, $token),
+				});
+			}
+
+			txStatus.set({ status: "fail", error: `Error: ${supplyResponse.error}` });
 		} catch (err: any) {
-			console.warn(err.message);
+			txStatus.set({ status: "fail", error: err.message });
 		}
 	};
 </script>
@@ -33,6 +51,9 @@
 	class="relative m-auto w-[40rem] overflow-hidden rounded-lg bg-white p-2 shadow-lg"
 >
 	<Copy />
+	{#if $progressOpen}
+		<FaucetProgress />
+	{/if}
 	<form on:submit|preventDefault={onSubmit}>
 		<div class="h-3/4 w-full border-b border-gray-200 pb-8">
 			<div class="flex w-full">

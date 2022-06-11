@@ -2,6 +2,9 @@
 	import type { GithubSession } from "$lib/types";
 	import { fade } from "svelte/transition";
 	import { session } from "$app/stores";
+	import { address, isValidAddress } from "$lib/stores/address";
+
+	$: disabled = !$isValidAddress || !$address;
 
 	$: githubAccount = ($session as GithubSession).user?.login ?? undefined;
 
@@ -10,8 +13,9 @@
 
 {#if githubAccount}
 	<button
-		class="text-md m-auto block w-64 rounded border border-[#9847FF] py-3 px-6 text-center font-semibold uppercase text-[#9847FF] transition duration-300 hover:border-white hover:bg-[#9847FF] hover:text-white"
+		class="text-md m-auto block w-64 rounded border border-[#9847FF] py-3 px-6 text-center font-semibold uppercase text-[#9847FF] transition duration-300 enabled:hover:border-white enabled:hover:bg-[#9847FF] enabled:hover:text-white"
 		transition:fade
+		{disabled}
 		type="submit"
 	>
 		{buttonText}

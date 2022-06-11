@@ -4,3 +4,6 @@ export { default as TokenSelect } from "$lib/components/token-select.svelte";
 export { default as NetworkSelect } from "$lib/components/network-select.svelte";
 export { default as FaucetButton } from "$lib/components/faucet-button.svelte";
 export { default as Tooltip } from "$lib/components/tooltip.svelte";
+export { default as MetaMaskPrompt } from "$lib/components/metamask-prompt.svelte";
+export { default as FaucetProgress } from "$lib/components/faucet-progress.svelte";
+export { default as SuccessResponse } from "$lib/components/success-response.svelte";

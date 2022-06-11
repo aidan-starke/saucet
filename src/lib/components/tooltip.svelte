@@ -2,7 +2,7 @@
 	export let message: string;
 </script>
 
-<span class="group relative flex">
+<span class="group relative z-0 flex">
 	<slot />
 	<span
 		class="absolute top-0 mt-6 flex hidden w-64 flex-col items-center group-hover:flex"
