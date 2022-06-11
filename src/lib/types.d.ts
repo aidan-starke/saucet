@@ -11,8 +11,8 @@ export interface CENNZnetToken {
 
 export interface TxStatus {
 	status: "in-progress" | "success" | "fail";
-	error?: string;
 	balance?: Balance;
+	error?: string;
 }
 
 interface MetaMaskNetwork {
@@ -27,16 +27,10 @@ export interface MetamaskNetworks {
 	Rata: MetaMaskNetwork;
 }
 
-export type Chain = "CENNZnet" | "Ethereum";
-
 export interface GenericCoin {
 	decimals?: number;
 	decimalsValue?: number;
 	symbol?: string;
-}
-
-export interface PropsWithChildren {
-	children?: ReactNode;
 }
 
 export interface GithubSession extends Session {
