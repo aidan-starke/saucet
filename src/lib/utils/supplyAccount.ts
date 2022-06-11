@@ -1,18 +1,18 @@
 import type { CENNZnetNetwork } from "$lib/types";
 
 const supplyAccount = async (
-	address: string,
-	addressType: string,
+	cennzAddress: string,
 	network: CENNZnetNetwork,
-	assetId: number
+	assetId: number,
+	githubAccount: string
 ) =>
 	await fetch(`/api/supplyAccount`, {
 		method: "post",
 		body: JSON.stringify({
-			address,
-			addressType,
+			cennzAddress,
 			network,
 			assetId,
+			githubAccount,
 		}),
 	})
 		.then((res) => res.json())

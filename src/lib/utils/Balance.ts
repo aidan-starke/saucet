@@ -1,5 +1,5 @@
 import type { Codec, Balance as ApiBalance } from "@cennznet/types";
-import type { BigSource, RoundingMode } from "big.js"
+import type { BigSource, RoundingMode } from "big.js";
 import type { GenericCoin } from "$lib/types";
 import type BN from "bn.js";
 

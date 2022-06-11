@@ -5,7 +5,11 @@ import type { SubmittableExtrinsic } from "@cennznet/api/types";
 import type { ISubmittableResult } from "@cennznet/types";
 import type { ExtrinsicError } from "$lib/types";
 
-export default class EndowedAccount {
+interface Phase {
+	applyExtrinsic?: number;
+}
+
+class EndowedAccount {
 	private _keyPair: any;
 	private _api: Api;
 	private _nonce: number;
@@ -82,13 +86,15 @@ export default class EndowedAccount {
 		);
 
 		let timeoutID: NodeJS.Timeout;
-		return new Promise((resolve, reject) => {
-			let signedTx: any;
 
-			this.nextNonce().then(
-				(nonce) => (signedTx = tx.signAsync(this._keyPair, { nonce }))
-			);
-			const hash = signedTx.hash;
+		const nonce = await this.nextNonce();
+		const signedTx: SubmittableExtrinsic<"promise", any> = await tx.signAsync(
+			this._keyPair,
+			{ nonce }
+		);
+
+		return new Promise((resolve, reject) => {
+			const hash = signedTx.hash.toString();
 
 			// first try promise, this promise will resolve after the first try;
 			let firstTryPromiseResolve: (value?: unknown) => void;
@@ -120,7 +126,7 @@ export default class EndowedAccount {
 						for (const event of events) {
 							if (
 								event.phase &&
-								event.phase.asApplyExtrinsic &&
+								(event.phase as Phase).applyExtrinsic &&
 								event.event.index.toString() === "0x0000"
 							) {
 								resolve(hash);
@@ -187,7 +193,7 @@ export default class EndowedAccount {
 	}
 }
 
-export class EndowedAccounts {
+export default class EndowedAccounts {
 	private _keyring: Keyring;
 	private _accounts: any[];
 	private _unavailableAccounts: any[];

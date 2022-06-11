@@ -13,7 +13,7 @@
 </script>
 
 <div class="my-6 mr-6 flex items-start">
-	<img src={CENNZ_LOGO} class="mt-2 ml-3 w-20" alt="CENNZnet Logo" />
+	<img src={CENNZ_LOGO} class="mt-2 ml-6 w-24" alt="CENNZnet Logo" />
 	<div class="ml-8 text-lg">
 		<p class="mb-3">
 			Bootstrap your wallet with <strong>2000</strong>
