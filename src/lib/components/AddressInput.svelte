@@ -7,7 +7,7 @@
 <input
 	id="address"
 	type="text"
-	class="ml-6 mt-1 block h-10 w-[36rem] rounded border border-gray-400 pl-2 font-mono text-sm hover:border-[#9847FF]"
+	class="ml-6 mt-1 block h-10 rounded border border-gray-400 pl-2 font-mono text-sm hover:border-[#9847FF] sm:w-[28.25rem] md:w-[31.1rem] lg:w-[36rem]"
 	placeholder="Enter a CENNZnet or Ethereum address"
 	bind:value={$address}
 />

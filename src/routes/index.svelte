@@ -52,7 +52,7 @@
 </script>
 
 <div
-	class="relative m-auto w-[40rem] overflow-hidden rounded-lg bg-white p-2 shadow-lg"
+	class="relative m-auto overflow-hidden rounded-lg bg-white p-2 shadow-lg sm:w-[32rem] md:w-[35rem] lg:w-[40rem]"
 >
 	<Copy />
 	{#if $progressOpen}

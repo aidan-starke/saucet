@@ -11,9 +11,9 @@
 	};
 </script>
 
-<div class="my-6 mr-6 flex items-start">
-	<img src={CENNZ_LOGO} class="mt-2 ml-6 w-24" alt="CENNZnet Logo" />
-	<div class="ml-8 text-lg">
+<div class="my-6 flex items-start">
+	<img src={CENNZ_LOGO} class="mt-2 w-24 sm:ml-3 md:ml-6" alt="CENNZnet Logo" />
+	<div class="ml-8 text-lg lg:mr-2">
 		<p class="mb-3">
 			Bootstrap your wallet with <strong>2000</strong>
 			<em class="token-symbol">CENNZ</em>
@@ -21,7 +21,7 @@
 			<em class="token-symbol">CPAY</em>
 			across our testnet networks.
 		</p>
-		<p class="mb-3">
+		<p class="sm:mb-6 md:mb-3">
 			One claim per day per token is allowed.
 			<br />
 			<Tooltip
