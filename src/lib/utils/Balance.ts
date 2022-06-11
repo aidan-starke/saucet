@@ -1,14 +1,8 @@
-import type { Codec, Balance as ApiBalance } from "@cennznet/types";
+import type { Balance as ApiBalance } from "@cennznet/types";
 import type { BigSource, RoundingMode } from "big.js";
 import type { GenericCoin } from "$lib/types";
-import type BN from "bn.js";
 
 import Big from "big.js";
-import { BigNumber, ethers } from "ethers";
-
-interface AsBalanceOptions {
-	withSymbol: boolean;
-}
 
 type BalanceDescriptor = Pick<GenericCoin, "symbol" | "decimals">;
 type BalanceSource = BigSource | Balance;
@@ -83,7 +77,7 @@ export default class Balance extends Big {
 
 	toInput(): string {
 		const { decimals } = this.coin;
-		return this.div(Math.pow(10, decimals)).toFixed(undefined, Big.roundDown);
+		return this.div(Math.pow(10, decimals!)).toFixed(undefined, Big.roundDown);
 	}
 
 	toPretty(): string {
@@ -94,65 +88,7 @@ export default class Balance extends Big {
 		return pretty;
 	}
 
-	toBalance(options = {} as AsBalanceOptions): string {
-		const { withSymbol } = options || {};
-		const { decimals, symbol } = this.coin;
-		const output = Balance.format(this.div(Math.pow(10, decimals)));
-		const suffix = withSymbol && symbol ? ` ${symbol}` : "";
-
-		return `${output}${suffix}`;
-	}
-
-	toBigNumber(): BigNumber {
-		return ethers.utils.parseUnits(this.toInput(), this.getDecimals());
-	}
-
-	getSymbol(): string {
-		return this.coin?.symbol;
-	}
-
-	getDecimals(): number {
-		return this.coin?.decimals;
-	}
-
-	withDecimals(n: number): Balance {
-		return new Balance(this, { ...this.coin, decimals: n });
-	}
-
-	withSymbol(s: string): Balance {
-		return new Balance(this, { ...this.coin, symbol: s });
-	}
-
-	withCoin(c: GenericCoin): Balance {
-		return new Balance(this, c);
-	}
-
-	static fromCodec(source: Codec, coin: BalanceDescriptor): Balance {
-		return new Balance(source.toString(), coin);
-	}
-
-	static fromBN(source: BN, coin: BalanceDescriptor): Balance {
-		return new Balance(source.toString(), coin);
-	}
-
 	static fromApiBalance(source: ApiBalance, coin: BalanceDescriptor): Balance {
 		return new Balance(source.toString(), coin);
-	}
-
-	static fromInput(source: string, coin: BalanceDescriptor): Balance {
-		const value = Number(source || 0) * Math.pow(10, coin?.decimals || 0);
-		return new Balance(value, coin);
-	}
-
-	static fromBigNumber(source: BigNumber, coin: BalanceDescriptor): Balance {
-		return new Balance(source.toString(), coin);
-	}
-
-	static format(source: BalanceSource, coin: BalanceDescriptor): string {
-		const value = new Balance(source, coin);
-		if (value.lte(0)) return Number(0).toFixed(1);
-		return value.lt(0.0001)
-			? "<0.0001"
-			: parseFloat(value.toFixed(4, Big.roundDown)).toString();
 	}
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isValidAddress, address, txStatus } from "$lib/stores";
+	import { isValidAddress, address } from "$lib/stores";
 	import { fade } from "svelte/transition";
 	import { Invalid } from "$lib/icons";
 
